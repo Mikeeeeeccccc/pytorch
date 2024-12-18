@@ -51,14 +51,14 @@ Our trunk health (Continuous Integration signals) can be found at [hud.pytorch.o
 
 At a granular level, PyTorch is a library that consists of the following components:
 
-| Component | Description |
-| ---- | --- |
-| [**torch**](https://pytorch.org/docs/stable/torch.html) | A Tensor library like NumPy, with strong GPU support |
-| [**torch.autograd**](https://pytorch.org/docs/stable/autograd.html) | A tape-based automatic differentiation library that supports all differentiable Tensor operations in torch |
-| [**torch.jit**](https://pytorch.org/docs/stable/jit.html) | A compilation stack (TorchScript) to create serializable and optimizable models from PyTorch code  |
-| [**torch.nn**](https://pytorch.org/docs/stable/nn.html) | A neural networks library deeply integrated with autograd designed for maximum flexibility |
+| Component | Description                                                                                                                             |
+| ---- |-----------------------------------------------------------------------------------------------------------------------------------------|
+| [**torch**](https://pytorch.org/docs/stable/torch.html) | A Tensor library like NumPy, with strong GPU support                                                                                    |
+| [**torch.autograd**](https://pytorch.org/docs/stable/autograd.html) | A tape-based automatic differentiation library that supports all differentiable Tensor operations in torch                              |
+| [**torch.jit**](https://pytorch.org/docs/stable/jit.html) | A compilation stack (TorchScript) to create serializable and optimizable models from PyTorch code                                       |
+| [**torch.nn**](https://pytorch.org/docs/stable/nn.html) | A neural networks library deeply integrated with autograd designed for maximum flexibility                                              |
 | [**torch.multiprocessing**](https://pytorch.org/docs/stable/multiprocessing.html) | Python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and Hogwild training |
-| [**torch.utils**](https://pytorch.org/docs/stable/data.html) | DataLoader and other utility functions for convenience |
+| [**torch.utils**](https://pytorch.org/docs/stable/data.html) | DataLoader and other utility functions for convenience                                                                                  |
 
 Usually, PyTorch is used either as:
 
@@ -208,7 +208,7 @@ If you want to compile with ROCm support, install
 - [AMD ROCm](https://rocm.docs.amd.com/en/latest/deploy/linux/quick_start.html) 4.0 and above installation
 - ROCm is currently supported only for Linux systems.
 
-By default the build system expects ROCm to be installed in `/opt/rocm`. If ROCm is installed in a different directory, the `ROCM_PATH` environment variable must be set to the ROCm installation directory. The build system automatically detects the AMD GPU architecture. Optionally, the AMD GPU architecture can be explicitly set with the `PYTORCH_ROCM_ARCH` environment variable [AMD GPU architecture](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus)
+By default, the build system expects ROCm to be installed in `/opt/rocm`. If ROCm is installed in a different directory, the `ROCM_PATH` environment variable must be set to the ROCm installation directory. The build system automatically detects the AMD GPU architecture. Optionally, the AMD GPU architecture can be explicitly set with the `PYTORCH_ROCM_ARCH` environment variable [AMD GPU architecture](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus)
 
 If you want to disable ROCm support, export the environment variable `USE_ROCM=0`.
 Other potentially useful environment variables may be found in `setup.py`.
@@ -253,7 +253,7 @@ conda install -c pytorch magma-cuda121  # or the magma-cuda* that matches your C
 make triton
 ```
 
-**On MacOS**
+**On macOS**
 
 ```bash
 # Add this package on intel x86 processor machines only
@@ -462,7 +462,7 @@ Three-pointers to get you started:
 * Forums: Discuss implementations, research, etc. https://discuss.pytorch.org
 * GitHub Issues: Bug reports, feature requests, install issues, RFCs, thoughts, etc.
 * Slack: The [PyTorch Slack](https://pytorch.slack.com/) hosts a primary audience of moderate to experienced PyTorch users and developers for general chat, online discussions, collaboration, etc. If you are a beginner looking for help, the primary medium is [PyTorch Forums](https://discuss.pytorch.org). If you need a slack invite, please fill this form: https://goo.gl/forms/PP1AGvNHpSaJP8to1
-* Newsletter: No-noise, a one-way email newsletter with important announcements about PyTorch. You can sign-up here: https://eepurl.com/cbG0rv
+* Newsletter: No-noise, a one-way email newsletter with important announcements about PyTorch. You can sign up here: https://eepurl.com/cbG0rv
 * Facebook Page: Important announcements about PyTorch. https://www.facebook.com/pytorch
 * For brand guidelines, please visit our website at [pytorch.org](https://pytorch.org/)
 
@@ -489,3 +489,27 @@ Note: This project is unrelated to [hughperkins/pytorch](https://github.com/hugh
 ## License
 
 PyTorch has a BSD-style license, as found in the [LICENSE](LICENSE) file.
+
+## How to Run PyTorch Scripts
+
+To execute a simple PyTorch script:
+1. Ensure you have PyTorch installed:
+   ```bash
+   pip install torch
+   ```
+   (For detailed installation instructions, refer to PyTorch's official website.)
+
+2. Create a Python script, for example, git_test.py, with the following content:
+   ```bash
+   import torch
+   
+   x = torch.rand(5, 5)
+   print(f"Random Tensor: {x}")
+   ```
+3. Run the script using:
+   ```bash
+   python git_test.py
+   ```
+You should see a random tensor printed on your terminal.
+   
+
